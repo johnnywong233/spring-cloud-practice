@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class UserController {
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public List<User> query(@RequestBody User user) {
         logger.info("query by example");
-        return Arrays.asList(user);
+        return Collections.singletonList(user);
     }
 
     @RequestMapping(method = RequestMethod.POST)

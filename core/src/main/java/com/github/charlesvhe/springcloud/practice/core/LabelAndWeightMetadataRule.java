@@ -12,10 +12,10 @@ import java.util.*;
  * Created by charles on 2017/5/22.
  */
 public class LabelAndWeightMetadataRule extends ZoneAvoidanceRule {
-    public static final String META_DATA_KEY_LABEL_AND = "labelAnd";
-    public static final String META_DATA_KEY_LABEL_OR = "labelOr";
+    private static final String META_DATA_KEY_LABEL_AND = "labelAnd";
+    private static final String META_DATA_KEY_LABEL_OR = "labelOr";
 
-    public static final String META_DATA_KEY_WEIGHT = "weight";
+    private static final String META_DATA_KEY_WEIGHT = "weight";
 
     private Random random = new Random();
 

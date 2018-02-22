@@ -21,9 +21,9 @@ public class CoreHeaderInterceptor extends HandlerInterceptorAdapter {
     private static final Logger logger = LoggerFactory.getLogger(CoreHeaderInterceptor.class);
 
     public static final String HEADER_LABEL = "x-label";
-    public static final String HEADER_LABEL_SPLIT = ",";
+    static final String HEADER_LABEL_SPLIT = ",";
 
-    public static final HystrixRequestVariableDefault<List<String>> label = new HystrixRequestVariableDefault<>();
+    static final HystrixRequestVariableDefault<List<String>> label = new HystrixRequestVariableDefault<>();
 
 
     public static void initHystrixRequestContext(String labels) {
@@ -39,7 +39,7 @@ public class CoreHeaderInterceptor extends HandlerInterceptorAdapter {
         }
     }
 
-    public static void shutdownHystrixRequestContext() {
+    private static void shutdownHystrixRequestContext() {
         if (HystrixRequestContext.isCurrentThreadInitialized()) {
             HystrixRequestContext.getContextForCurrentThread().shutdown();
         }
